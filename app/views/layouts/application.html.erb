@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BackCountryTrails</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <!-- <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description"> -->
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="img/favicon.png" rel="icon">
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet"> -->
-  </head>
+    <head>
+        <title>BackCountryTrails</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <!-- <meta content="width=device-width, initial-scale=1.0" name="viewport"> <meta content="" name="keywords"> <meta content="" name="description"> -->
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <!-- <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"> <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> <link href="lib/animate/animate.min.css" rel="stylesheet"> <link href="css/style.css" rel="stylesheet">
+        <link href="img/favicon.png" rel="icon"> <link href="img/apple-touch-icon.png" rel="apple-touch-icon"> <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet"> -->
+    </head>
 
-  <body>
-      <nav>
-          <p class="app-title">BackCountryTrails</p>
-      </nav>
-      <header>
-          <% unless @logged_in %>
-          <div class="container">
-          <ul id= "header-ul">
-              <li class="nav-bar"><%= link_to "Home", root_path %></li>
-              <li class="nav-bar"><%= link_to "National Parks", national_parks_path %></li>
-              <li class="nav-bar"><%= link_to "Trails", trails_path %></li>
-              <li class="nav-bar"><%= link_to "Login", new_login_path %></li>
-              <li class="nav-bar"><%= link_to "Sign Up", new_user_path %></li>
+    <body>
 
-          </ul>
-          </div>
-          <% else %>
-          <div class="logged-in-navbar">
-            Hello, <%= @logged_in_user.username %><br>
-            <%= link_to "National Parks", national_parks_path  %>
-            <%= link_to "All Trails", trails_path  %>
-            <%= link_to "Review a Trail", new_user_trail_path  %>
-            <%= link_to "My Profile", user_path(@logged_in_user)  %>
-            <%= form_tag "/login/#{ @logged_in_user.id }", method: :delete do %>
-                <%= submit_tag "Log out" %>
-                <hr>
-            <% end %>
-          <% end %>
-          </div>
-      </header>
-    <%= yield %>
+        <!-- <nav class="navbar navbar-expand navbar-dark bg-dark"> <a class="navbar-brand" href="#">Always expand</a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02"
+        aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse" id="navbarsExample02"> <ul class="navbar-nav mr-auto"> <li class="nav-item active"> <a class="nav-link"
+        href="#">Home <span class="sr-only">(current)</span></a> </li> <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li> </ul> <form class="form-inline my-2 my-md-0"> <input class="form-control" type="text" placeholder="Search"> </form>
+        </div> </nav> -->
+        <% unless @logged_in %>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="/">BackCountryTrails</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/national_parks">National Parks</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-center" href="/trails">Trails</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/login/new">Login</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link " href="/users/new">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        <% else %>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="/">BackCountryTrails</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/national_parks">National Parks</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/trails">Review a Trail</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/users/<%=@logged_in_user.id%>">My Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        <% end %>
+
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="text-center col-md-6" style="padding-top: 125px;">
+                <%=yield%>
+            </div>
+        </div>
+
     </body>
 </html>

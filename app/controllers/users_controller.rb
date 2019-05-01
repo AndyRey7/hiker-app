@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 
     def show
-        @lists = List.all
+
     end
 
     def new
@@ -21,12 +21,7 @@ class UsersController < ApplicationController
         end
     end
 
-    def destroy
-
-    end
-
-
-
+    
     private
     def get_user
         @user = User.find(params[:id])

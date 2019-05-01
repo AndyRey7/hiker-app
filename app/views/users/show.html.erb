@@ -1,3 +1,4 @@
+<div class = "lists-container">
 <h2>These are the trails you have hiked</h2>
 
 <% @user.trails.each do |trail|%>
@@ -17,8 +18,9 @@
     <li>
         <%= link_to list.trail.name, list.trail %>
         <%= form_for list, method: :delete do |f|%>
-        <%= f.submit "Remove Trail From List" %>
+            <%= f.submit "Remove Trail From List" %>
         <% end %>
     </li>
 </ul>
 <% end %>
+</div>

@@ -1,33 +1,33 @@
-<h3><%= @trail.name %></h3>
+<h1><%= @trail.name %></h1>
 
-Average Trail Rating:
-<%= @trail.trail_rating%>
+<h2>Average Trail Rating:
+    <%= @trail.trail_rating%></h2>
 
-<p><%= flash[:errors].to_s %></p>
 <% if @logged_in_user %>
-    <%= link_to "Add a Review", new_user_trail_path %>
+    <p><%= link_to "Add a Review", new_user_trail_path, style: "font-size: 24px"%></p>
+    <p><%= flash[:errors] %></p>
     <%= form_for @list do |f| %>
-    <%= f.hidden_field :user_id, value: @logged_in_user.id %>
-    <%= f.hidden_field :trail_id, value: @trail.id %>
-    <%= f.submit "Add to List" %>
+        <%= f.hidden_field :user_id, value: @logged_in_user.id %>
+        <%= f.hidden_field :trail_id, value: @trail.id %>
+        <p><%= f.submit "Add to List", message: "This trail has been added to your list." %></p>
     <% end %>
 <% end %>
 
-
 <p>Description: <%= @trail.description %></p>
 <p>Miles: <%= @trail.miles %></p>
-<p>National Park: <%= @trail.national_park.name %>, State: <%= @trail.national_park.state %>
+<p>National Park: <%= @trail.national_park.name %></p>
+<p>State: <%= @trail.national_park.state %></p>
 
 <% @trail.user_trails.each do |ut| %>
-    <hr>
+    <hr style="border: 2px solid grey ">
     <p>Hiker: <%= ut.user.full_name %></p>
     <p>Rating: <%= ut.rating %></p>
     <p>Review: <%= ut.review %></p>
     <% if @logged_in_user %>
         <% if @logged_in_user.id == ut.user_id %>
-            <%= form_for ut, method: :delete, data: {confirm: "Are you sure?"} do |t|%>
-                <%= t.submit "Delete" %>
-                <%= link_to "Edit Your Review", edit_user_trail_path(ut) %>
+            <p><%= form_for ut, method: :delete, data: {confirm: "Are you sure?"} do |t|%></p>
+                <p><%= t.submit "Delete Review" %></p>
+                <p><%= link_to "Edit Your Review", edit_user_trail_path(ut) %></p>
             <% end %>
         <%end %>
     <% end %>

@@ -12,15 +12,35 @@
  *
  *= require_tree .
  *= require_self
- */
+ *= require bootstrap/dist/css/bootstrap
 
- body {
+ */
+ * {
+    font-family: 'Arial';
+}
+
+p {
+    font-size: 20px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 20px;
+}
+
+h1 {
+    padding-top: 38px;
+}
+
+ /* body {
      font-family: 'Indie Flower', cursive;
      background: radial-gradient(
       #00000096,
       #b7b7b796
     );
-    /* background: url(https://thumbnails-visually.netdna-ssl.com/mountain-hiking-accesories_511ccc2aa37ec_w1500.jpg); */
     z-index: -2px;
     background-size: cover;
  }
@@ -83,3 +103,30 @@ a:hover {
     text-align: center;
     padding: 100px;
 }
+
+.trail-name {
+    font-size: 55px;
+    padding: 0px;
+    margin: 0px;
+    color: #1f5f38;
+}
+
+#avg-rating {
+    color: #1f5f38;
+    font-size: 25px;
+}
+
+
+.photos {
+    height: 300px;
+    width: 75%;
+
+}
+
+.photos img {
+    position: absolute;
+    margin: auto;
+    min-height: 40%;
+    min-width: 40%;
+
+} */
