@@ -6,7 +6,7 @@
 * **Dallas Bille** -[DallasBille](https://github.com/DallasBille)
 
 ## About
-Do you enjoy nature and hikes?1? if yes, then this is the app to have to keep a record of trails that you want to hike or that you would like to check out. You get to see what kind of trails there are in the beautiful National Parks of the United States. Either way, come check it out! Happy Trails!
+Do you enjoy nature and hikes?!? if yes, then this is the app to have to keep a record of trails that you want to hike or that you would like to check out. You get to see what kind of trails there are in the beautiful National Parks of the United States. Either way, come check it out! Happy Trails!
 
 ## Setup
 
