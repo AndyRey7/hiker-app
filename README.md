@@ -14,7 +14,7 @@ To get started:
 
 1. In your terminal run `bundle` to install gems
 2. To retrieve your tables from datbase and data from your database run `rails db:migrate && rails db:seed` 
-3. Go to your browser and type in `https://localhost:3000` that way it will direct you to the home page of the website, or you can use the command in your terminal `rails s` to get the server started.
+3. You can use the command in your terminal `rails s` to get the server started, afterwards go to your browser and type in `https://localhost:3000` and that way it will direct you to the home page of the website. 
 
 
 ## Features
